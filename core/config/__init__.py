@@ -11,7 +11,7 @@ class SystemConfiguration(BaseSettings):
     ALLOWED_HOSTS: tuple[str] = ('*',)
 
 
-class Configuration(BaseSettings, SystemConfiguration):
+class Configuration(SystemConfiguration):
     model_config = SettingsConfigDict(
         env_file=BASE_DIR / '.env',
         extra='ignore',
